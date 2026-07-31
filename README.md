@@ -1,26 +1,23 @@
-# Module 2 Final Project - Linear Regression
-
+# King County Housing Price Prediction
 
 ## Introduction
 
-In this project I look at the provided housing proces dataset of the king county Washington state. 
+In this project, we analyze the King County, Washington housing dataset to build a multivariate linear regression model that predicts residential home prices.
 
 ## Objectives
-The project onjectives are as follows. 
-* What is the current price distribution ?
-* What factors affects the value of a house ? 
-* How does the price change over time ?
-* Feature engineer, train, test and validate a multivariate linear regression model to predict housing prices. 
+* What is the current price distribution of homes in King County?
+* What structural and location features most strongly affect house values?
+* How do sales prices fluctuate over time?
+* Feature engineer, train, test, and validate a multivariate linear regression model to accurately predict housing prices.
 
-## File origanization
+## File Structure
 
-1. **student.ipynb**: Data loading and cleaning. Initial visualization and exploration of features. multicolliniarity and handling outliers. 
-3. **modeling.ipynb**: Calculating initial regression model as a baseline. Choose a suitable library and algorithm. Explor features that needs to be changed, removed or add. Handle categorical data. Noemalize data. Feature engineering, regression diagnostics, test-train spliting and cross validation. 
-4. **analysis.ipynb**: Analysis and drawing conclusion from the model. 
+1. **[student.ipynb](student.ipynb)**: Data loading, cleaning, EDA, visualization, handling multicollinearity, and outlier filtering.
+2. **[modeling.ipynb](modeling.ipynb)**: Baseline linear regression modeling, feature transformation, categorical encoding, normalization, cross-validation, and model diagnostic checks.
+3. **[analysis.ipynb](analysis.ipynb)**: Final model performance evaluation, key findings, and actionable recommendations.
 
-## final model summary
-![](img/model_3_summary.png)
+## Final Model Summary
+![Model Summary](img/model_3_summary.png)
 
-## comparison of real and predicted of house price 
-![](img/Pred_vs_real.png)
-
+## Actual vs. Predicted House Prices
+![Predicted vs Real Prices](img/Pred_vs_real.png)
