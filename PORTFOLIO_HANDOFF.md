@@ -1,6 +1,16 @@
 # Portfolio Handoff Payload: King County Housing Price Prediction
 
-This handoff document provides the complete, structured metadata and integration payload for embedding the **King County Housing Price Prediction** project into the **Healthcare Data Scientist Portfolio (`ccdportfolio`)** website.
+This handoff document provides the complete, structured metadata, architectural rationale, and integration payload for embedding the **King County Housing Price Prediction** project into the **Healthcare Data Scientist Portfolio (`ccdportfolio`)** website.
+
+---
+
+## 🎯 Recruiter & Portfolio Integration Strategy: Interactive Demo Intent
+
+To maximize recruiter engagement on the portfolio website, this project includes a **lightweight, standalone Streamlit web micro-app (`app.py`)**. 
+
+* **Live Demo Deployment Target**: `https://king-county-housing-prediction.streamlit.app` (Streamlit Community Cloud)
+* **Portfolio Showcase Integration**: Featured inside **Module 4 (Live Demos & Predictive Tools)** of `ccdportfolio`.
+* **Recruiter Experience**: Recruiters and hiring managers visiting `ccdportfolio` can click the "Live Demo" button on the project card to launch an interactive widget where they can adjust home specs (living area sqft, grade, bedrooms, zipcode) and test real-time machine learning price predictions ($R^2 = 0.875$).
 
 ---
 
@@ -39,7 +49,7 @@ This handoff document provides the complete, structured metadata and integration
       "Extensive Exploratory Data Analysis (EDA) on 19 physical, temporal, and spatial features across Seattle & King County.",
       "Engineered log-transformed continuous variables, one-hot encoded categorical factors, and calculated Haversine distance metrics.",
       "Multi-model benchmark comparing Statsmodels OLS, Ridge, Lasso, and LightGBM regressors.",
-      "Deployed a standalone, interactive Streamlit web application allowing users to input house specs and receive real-time price evaluations."
+      "Built a live interactive Streamlit web micro-app enabling recruiters and non-technical stakeholders to input house specs and receive real-time price evaluations."
     ]
   }
 }
@@ -64,12 +74,22 @@ In real estate markets, accurately valuing residential properties is critical fo
    - **Baseline OLS Regression (`Statsmodels`)**: Achieved $R^2 = 0.751$, validating statistical significance ($p < 0.05$) for key predictor coefficients.
    - **Regularized Linear Models (Ridge & Lasso)**: Controlled overfitting and reduced coefficient variance while maintaining high interpretability.
    - **Gradient Boosted Decision Trees (`LightGBM`)**: Boosted predictive power to $R^2 \approx 0.875$ with an RMSE reduction of over 20%.
-4. **Interactive Deployment**:
-   - Built and deployed a clean **Streamlit web micro-app** enabling non-technical stakeholders to adjust property parameters (square footage, grade, bedrooms, zip code) and obtain instant market price estimates.
+4. **Interactive Deployment Intent**:
+   - Deployed/configured as a **Streamlit web micro-app** enabling non-technical stakeholders to adjust property parameters (square footage, grade, bedrooms, zip code) and obtain instant market price estimates.
 
 ---
 
-## 3. Tech Stack Tags
+## 3. Architecture & Framework Rationale Summary
+
+| Framework | Decision | Rationale |
+| :--- | :--- | :--- |
+| **Streamlit** | **Chosen** | Native execution of `scikit-learn`/`pandas` ML models in pure Python; zero API overhead; sub-100ms model caching; 1-click cloud deployment. |
+| **Next.js + Vercel** | Not Selected | Requires building separate REST APIs (FastAPI) and encounters Vercel 250MB serverless package limits for heavy ML libraries (`pandas`, `scikit-learn`). |
+| **GitHub Pages** | Not Selected | Static files only. Cannot run server-side Python ML models; browser Pyodide bundles create heavy latency for recruiters (~50MB+ download). |
+
+---
+
+## 4. Tech Stack Tags
 
 | Category | Technologies |
 | :--- | :--- |
@@ -82,15 +102,15 @@ In real estate markets, accurately valuing residential properties is critical fo
 
 ---
 
-## 4. 2026 AI Banner Card Image Generation Prompt
+## 5. 2026 AI Banner Card Image Generation Prompt
 
 > **Prompt for Midjourney / DALL-E 3 / Stable Diffusion:**
 > *"Modern 3D isometric tech visualization of real estate data analytics in Seattle, featuring stylized glowing digital houses and analytical graphs emerging from an interactive map of King County Washington. Futuristic dark mode UI elements, clean glassmorphic cards showing housing price metrics and scatter plots, vibrant neon cyan and deep violet accents, highly detailed, 8k resolution, cinematic lighting, corporate data science aesthetic."*
 
 ---
 
-## 5. Live Links & Deployment Coordinates
+## 6. Live Links & Deployment Coordinates
 
 * **GitHub Repository**: [https://github.com/GitHub-ccd/king-county-housing-price-prediction](https://github.com/GitHub-ccd/king-county-housing-price-prediction)
-* **Live Streamlit App**: [https://king-county-housing-prediction.streamlit.app](https://king-county-housing-prediction.streamlit.app)
+* **Live Streamlit App Target**: [https://king-county-housing-prediction.streamlit.app](https://king-county-housing-prediction.streamlit.app)
 * **Portfolio Showcase Category**: Module 4 (Live Demos & Predictive Tools)
